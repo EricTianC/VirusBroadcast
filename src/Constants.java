@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.awt.*;
 /**
  * 模拟参数
  *
@@ -7,7 +9,7 @@
  * @date: 2020年02月02日 21:40
  */
 public class Constants {
-
+	
     public static int ORIGINAL_COUNT = 50;//初始感染数量
     public static float BROAD_RATE = 0.8f;//传播率
     public static float SHADOW_TIME = 140;//潜伏时间，14天为140
@@ -29,5 +31,34 @@ public class Constants {
      */
     public static final int CITY_WIDTH = 700;
     public static final int CITY_HEIGHT = 800;
-
+    public static void paint() {
+    	
+    	JFrame window = new JFrame("控制面板");
+    	window.setBounds(920,300,200,160);
+    	JPanel jp = new JPanel();
+    	window.add(jp);
+    	jp.setLayout(new GridLayout(2,2));
+        JLabel broadRateLabel = new JLabel("传染几率：");
+        /* 这个方法定义了组件的位置。
+         * setBounds(x, y, width, height)
+         * x 和 y 指定左上角的新位置，由 width 和 height 指定新的大小。
+         */
+        broadRateLabel.setBounds(0,0,80,25);
+        JTextField broadRate = new JTextField(Float.toString(BROAD_RATE));
+        broadRate.setBounds(30, 0, 60, 20);
+        JLabel uLabel = new JLabel("流动速率：");
+        uLabel.setBounds(0, 27, 80, 25);
+        JTextField ut = new JTextField(Float.toString(u));
+        ut.setBounds(60,27,60,25);
+        jp.add(broadRateLabel);
+        jp.add(broadRate);
+        jp.add(uLabel);
+        jp.add(ut);
+        window.pack();
+        window.setVisible(true);
+        while(true) {
+        	BROAD_RATE = Float.parseFloat(broadRate.getText());
+        	u = Float.parseFloat(ut.getText());
+        }
+    }
 }
