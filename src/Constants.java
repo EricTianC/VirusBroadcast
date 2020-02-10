@@ -57,8 +57,15 @@ public class Constants {
         window.pack();
         window.setVisible(true);
         while(true) {
+        	try {
         	BROAD_RATE = Float.parseFloat(broadRate.getText());
         	u = Float.parseFloat(ut.getText());
+        	} catch(Exception e) {
+        		System.out.print(e);
+        	}
         }
+        /*
+         * 说实话这部分乱得很，主要是卡
+         */
     }
 }
