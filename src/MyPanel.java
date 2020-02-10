@@ -28,7 +28,7 @@ public class MyPanel extends JPanel implements Runnable {
         //绘制医院边界
         g.drawRect(Hospital.getInstance().getX(), Hospital.getInstance().getY(),
                 Hospital.getInstance().getWidth(), Hospital.getInstance().getHeight());
-        g.setFont(new Font("微软雅黑", Font.BOLD, 19));
+        g.setFont(new Font("方正手迹-田歌硬笔楷书 简", Font.BOLD, 19));
         g.setColor(new Color(0x00ff00));
         g.drawString("医院", Hospital.getInstance().getX() + Hospital.getInstance().getWidth() / 4, Hospital.getInstance().getY() - 16);
         //绘制代表人类的圆点

@@ -15,6 +15,7 @@ public class Main {
         initHospital();
         initPanel();
         initInfected();
+        Constants.paint();
     }
 
     /**
